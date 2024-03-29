@@ -5,11 +5,10 @@ export default function Player({ initialName, symbol }) {
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEditClick() {
-    setIsEditing(editing => !editing);
+    setIsEditing((editing) => !editing);
   }
 
   function handleChange(event) {
-    console.log(event);
     setPlayerName(event.target.value);
   }
 
@@ -17,7 +16,9 @@ export default function Player({ initialName, symbol }) {
   // let btnCaption = "Edit";
 
   if (isEditing) {
-    editablePlayerName = <input type="text" required value={playerName} onChange={handleChange}/>;
+    editablePlayerName = (
+      <input type="text" required value={playerName} onChange={handleChange} />
+    );
     // btnCaption = "Save";
   }
 
